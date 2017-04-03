@@ -3,6 +3,10 @@ Ext.define('ExampleApp.view.Main', {
 
     xtype: 'main',
 
+    requires: [
+        'Ext.MessageBox'
+    ],
+
     config: {
         tabBarPosition: 'bottom',
         fullscreen: true,
@@ -40,9 +44,9 @@ Ext.define('ExampleApp.view.Main', {
                             xtype: 'button',
                             text: 'Send',
                             ui: 'confirm',
-                            handler: function() {
-                                this.up('formpanel').submit();
-                                
+
+                            handler: function(button, event) {
+                                Ext.Msg.alert("Data is valid","Success");
                             }
                         }
                     ]
