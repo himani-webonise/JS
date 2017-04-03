@@ -1,0 +1,25 @@
+logs
+target
+bin
+
+/.idea
+/.idea_modules
+/.classpath
+/.project
+/.settings
+
+/*.log
+*.class
+mvnw
+mvnw.cmd
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+*.iml
+
+debug.log
+
+resources/sass/.sass-cache/

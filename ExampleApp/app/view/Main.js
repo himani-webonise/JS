@@ -3,7 +3,7 @@ Ext.define('ExampleApp.view.Main', {
     xtype: 'main',
     requires: [
         'Ext.TitleBar',
-        'Ext.Video'
+        // 'Ext.Video'
     ],
     config: {
         tabBarPosition: 'bottom',

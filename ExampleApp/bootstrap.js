@@ -36,6 +36,7 @@ Ext.Loader.addClassPathMappings({
 });
 
 Ext.ClassManager.addNameAlternateMappings({
+  "ExampleApp.view.Home": [],
   "ExampleApp.view.Main": [],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
@@ -672,6 +673,7 @@ Ext.ClassManager.addNameAlternateMappings({
 });
 
 Ext.ClassManager.addNameAliasMappings({
+  "ExampleApp.view.Home": [],
   "ExampleApp.view.Main": [
     "widget.main"
   ],
