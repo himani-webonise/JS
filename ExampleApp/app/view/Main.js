@@ -7,6 +7,8 @@ Ext.define('ExampleApp.view.Main', {
         'Ext.MessageBox'
     ],
 
+    // models: ['']
+
     config: {
         tabBarPosition: 'bottom',
         fullscreen: true,
@@ -16,7 +18,8 @@ Ext.define('ExampleApp.view.Main', {
                     title: 'Contact',
                     iconCls: 'user',
                     xtype: 'formpanel',
-                    // url: 'contact.php',s
+                    // url: 'contact.php'
+
                     layout: 'vbox',
 
                     items: [
@@ -28,14 +31,17 @@ Ext.define('ExampleApp.view.Main', {
                             items: [
                                 {
                                     xtype: 'textfield',
+                                    name: 'name',
                                     label: 'Name'
                                 },
                                 {
                                     xtype: 'emailfield',
+                                    name: 'email',
                                     label: 'Email'
                                 },
                                 {
                                     xtype: 'textareafield',
+                                    name: 'message',
                                     label: 'Message'
                                 }
                             ]
@@ -46,29 +52,25 @@ Ext.define('ExampleApp.view.Main', {
                             ui: 'confirm',
                             
                             handler: function(button, event) {
-                                var errorString = '',
-                                form = button.up('formpanel'),
-                                fields = form.query("field");
-                                console.log(fields);
-/*                                // dump form fields into new model instance
-                                var model = Ext.create("MyApp.model.Person", form.getValues());
+                                var errorString = '';
+                                var form = button.up('formpanel');
+                                
+                                // dump form fields into new model instance
+                                var model = Ext.create("ExampleApp.model.Contact", form.getValues());
                              
                                 // validate form fields
                                 var errors = model.validate();
-                             
+                                                             
                                 if (!errors.isValid()) {
                                 // loop through validation errors and generate a message to the user
                                     errors.each(function (errorObj) {
-                                        errorString += errorObj.getField() + " " + errorObj.getMessage() + "";                      ";
-                                        var s = Ext.String.format('field[name={0}]',errorObj.getField());
-                                        form.down(s).addCls('invalidField');
+                                        // errorObj.getField() + " " +
+                                        errorString +=  errorObj.getMessage() + "";
                                     });
-                                    Ext.Msg.alert('Errors in your input',errorString);
+                                    Ext.Msg.alert('Errors in your input', errorString);
                                 } else {
                                     Ext.Msg.alert("Data is valid","Success");
-                                }*/
-
-                            Ext.Msg.alert("Data is valid","Success");
+                            }                           
                         }
                     }
                 ]
