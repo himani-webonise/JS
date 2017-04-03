@@ -7,7 +7,10 @@ Ext.define('ExampleApp.view.Main', {
         'Ext.MessageBox'
     ],
 
-    // models: ['']
+    views : [
+        'HomeView'
+    ],
+    
 
     config: {
         tabBarPosition: 'bottom',
@@ -18,7 +21,7 @@ Ext.define('ExampleApp.view.Main', {
                     title: 'Contact',
                     iconCls: 'user',
                     xtype: 'formpanel',
-                    // url: 'contact.php'
+                    url: 'localhost:1841',
 
                     layout: 'vbox',
 
@@ -69,7 +72,9 @@ Ext.define('ExampleApp.view.Main', {
                                     });
                                     Ext.Msg.alert('Errors in your input', errorString);
                                 } else {
-                                    Ext.Msg.alert("Data is valid","Success");
+                                    // Ext.Msg.alert("Data is valid","Success");                                    
+                                    Ext.Viewport.down('main').destroy();
+                                    Ext.Viewport.add(Ext.create('ExampleApp.view.Home', { fullscreen: true }));
                             }                           
                         }
                     }
