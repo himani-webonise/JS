@@ -1,4 +1,4 @@
-Ext.define("ExampleApp.view.Home", {
+xt.define("ExampleApp.view.Home", {
 	extend: 'Ext.Panel',
 
 	config: {
