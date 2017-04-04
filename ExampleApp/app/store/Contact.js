@@ -7,7 +7,7 @@ Ext.define('ExampleApp.store.Contact', {
      	//use sessionstorage if need to save data for that
     	//specific session only
      		type: 'sessionstorage',
-        	id  : 'name'
+        	id  : 'name',
     	}
     }
 });

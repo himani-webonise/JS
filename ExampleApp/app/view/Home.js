@@ -16,6 +16,31 @@ Ext.define("ExampleApp.view.Home", {
 
 		html: [
             '<p>Welcome to Home page</p>'
+        ],
+
+        items: [
+        	{
+        		xtype: 'button',        		        		
+        		ui: 'sencha',
+        		text: 'Send Request',        		        		
+                id: 'apiBtn',
+                centered: true                       		
+        	},
+            {
+                xtype: 'label',                                
+                ui: 'sencha',
+                text: 'Api Response',                               
+                
+                items: [
+                    {
+
+                    },
+                    {
+                        
+                    }
+                ]           
+            },
+
         ]
 	}
 }); 

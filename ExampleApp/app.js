@@ -13,7 +13,15 @@
 Ext.application({
     name: 'Sencha',
 
-    launch: function() {        
+    controllers: ['ExampleApp.controller.Main'],
+
+    views: ['ExampleApp.view.Main'],
+
+    models: ['ExampleApp.model.Contact'], 
+
+    stores : [ 'ExampleApp.store.Contact'], //it must be Contacts
+    
+    launch: function() {       
         Ext.Viewport.add(Ext.create('ExampleApp.view.Main', { fullscreen: true }));        
     }
 });
