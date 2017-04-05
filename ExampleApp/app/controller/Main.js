@@ -4,7 +4,8 @@ Ext.define('ExampleApp.controller.Main', {
     config: {
         refs: {
             sendButton: '#sendBtn',
-            apiButton: '#apiBtn'
+            apiButton: '#apiBtn',
+            raceList: '#raceList'
         },
 
         control: {
@@ -53,6 +54,7 @@ Ext.define('ExampleApp.controller.Main', {
     },
 
     callApi: function(button) {
+        
         Ext.Ajax.request({
             url: 'http://stage.drfformulatorweb.com/formulator-service/racesCondition',
             params: {
@@ -67,10 +69,19 @@ Ext.define('ExampleApp.controller.Main', {
             headers: { 'Content-Type': 'application/json' },
 
             success: function(response) {             
-                               
-                // process server response here
-                var jsonResp = Ext.util.JSON.decode(response.responseText);                
-            },
+                debugger;
+                var _this = this;
+                var jsonResp = Ext.util.JSON.decode(response.responseText);
+
+                if (jsonResp.status == 200) {
+                    var raceList = jsonResp.data.races;
+                    var raceStore = Ext.getStore('Races'); 
+
+                    raceStore.setData(raceList);
+                    raceStore.load();
+                    _this.getRaceList().setStore(raceStore);                                     
+                }                 
+            }.bind(this),
             failure: function(response) {
                 Ext.Msg.alert('Error in API'+ response.status);
             }

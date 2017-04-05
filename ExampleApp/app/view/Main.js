@@ -8,7 +8,7 @@ Ext.define('ExampleApp.view.Main', {
     ],
 
     views : [
-        'HomeView'
+        'Home'
     ],
     stores : [
         'ExampleApp.store.Contact' //it must be Contacts

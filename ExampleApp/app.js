@@ -17,9 +17,13 @@ Ext.application({
 
     views: ['ExampleApp.view.Main'],
 
-    models: ['ExampleApp.model.Contact'], 
+    models: ['ExampleApp.model.Contact',
+        'ExampleApp.model.Race'
+    ], 
 
-    stores : [ 'ExampleApp.store.Contact'], //it must be Contacts
+    stores : [ 'ExampleApp.store.Contact',
+        'ExampleApp.store.Races'
+    ], //it must be Contacts
     
     launch: function() {       
         Ext.Viewport.add(Ext.create('ExampleApp.view.Main', { fullscreen: true }));        
